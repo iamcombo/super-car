@@ -1,12 +1,14 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { loadCursor } from '@/utils/cursor';
 import Header from '@/components/Header';
+import { loadCursor } from '@/utils/cursor';
+import PageRouteProgress from '@/utils/PageRouteProgress';
 
 export default function App({ Component, pageProps }: AppProps) {
+  PageRouteProgress();
   const ballCanvas = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
