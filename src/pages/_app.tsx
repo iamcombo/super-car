@@ -26,8 +26,8 @@ export default function App({ Component, pageProps }: AppProps) {
       {/*===> Header <===*/}
       <Header />
       {/*===> Main <===*/}
-      <PageRouteAnimation key={router.asPath}>
-        <main className='mx-auto max-w-3xl md:py-24 lg:py-8'>
+      <PageRouteAnimation keyProp={router.asPath}>
+        <main className='mx-auto max-w-3xl px-8 md:px-0 md:py-16 lg:py-8'>
           <Component {...pageProps} />
         </main>
       </PageRouteAnimation>

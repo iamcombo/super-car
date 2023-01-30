@@ -14,9 +14,9 @@ const Header = () => {
 			<NavLink href="/about" closeMenu={closeMenu}>
 				/about
 			</NavLink>
-			<NavLink href="/talk" closeMenu={closeMenu}>
+			{/* <NavLink href="/talk" closeMenu={closeMenu}>
 				/talk
-			</NavLink>
+			</NavLink> */}
 		</>
 	);
 
