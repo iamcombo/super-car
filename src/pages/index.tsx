@@ -18,10 +18,24 @@ import {
 } from 'react-icons/si';
 import { SlLocationPin } from 'react-icons/sl';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import useSWR from 'swr';
 
 const inter = Inter({ subsets: ['latin'] })
 
+type PinnedRepo = {
+  owner: string;
+  repo: string;
+  description: string;
+  language: string;
+  languageColor: string;
+  stars: string;
+  forks: string;
+};
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
 export default function Home() {
+  const { data, error } = 
+    useSWR<PinnedRepo[], Error>('https://gh-pinned.nxl.sh/api/user/iamcombo', fetcher, { refreshInterval: 5000 });
   const [text, count] = useTypewriter({
     words: [
       "Hey, I'm Piset 👋",
@@ -55,6 +69,14 @@ export default function Home() {
         <div className='p-4' />
 
         <p className='text-2xl sm:text-3xl font-extrabold mb-8'>What do I do?</p>
+        <div className='grid grid-cols-2 gap-4 sm:grid-cols-2'>
+          {data?.map((element: PinnedRepo, index: number) => 
+            <div key={index} className='bg-neutral-900 rounded-lg px-8 py-4'>
+              <p className='text-lg font-bold mb-2'>{element.repo}</p>
+              <p className='font-thin text-neutral-400'>{element.description}</p>
+            </div>
+          )}
+        </div>
         <div className='p-4' />
 
         <p className='text-2xl sm:text-3xl font-extrabold mb-1'>Technologies</p>
