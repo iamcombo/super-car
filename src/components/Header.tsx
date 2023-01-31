@@ -3,20 +3,6 @@ import { ReactNode, useState } from "react";
 import { Squash as Hamburger } from 'hamburger-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const navLinkVariants = {
-	hidden: {
-		display: "none",
-		opacity: 0
-	},
-	visible: {
-		opacity: 1,
-		y: -30,
-		transition: {
-			delay: 0.7
-		}
-	}
-}
-
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
 
@@ -32,9 +18,6 @@ const Header = () => {
 			<NavLink href="/about" closeMenu={closeMenu}>
 				/about
 			</NavLink>
-			{/* <NavLink href="/talk" closeMenu={closeMenu}>
-				/talk
-			</NavLink> */}
 		</>
 	);
 
@@ -46,11 +29,17 @@ const Header = () => {
         </nav>
       </div>
 			<div className="sticky top-0 z-20 overflow-hidden sm:hidden">
-				<Hamburger 
-					size={20}
-					color="currentColor"
-					onToggle={() => setToggle(!toggle)}
-				/>
+				<button
+					type="button"
+					className="relative z-50 block px-2 text-neutral-400 transition-all focus:ring"
+					onClick={() => setToggle(!toggle)}
+				>
+					<Hamburger 
+						size={20}
+						color="currentColor"
+						toggled={toggle}
+					/>
+				</button>
 			</div>
 			<AnimatePresence>
 				{toggle && (
@@ -60,7 +49,7 @@ const Header = () => {
 						exit={{opacity: 0}}
 						className="fixed inset-0 z-10 space-y-2 bg-white py-24 px-8 dark:bg-neutral-900 sm:hidden"
 					>
-						<h1 className="text-4xl font-bold">Menu.</h1>
+						<h1 className="text-4xl font-bold mt-4">Menu.</h1>
 
 						<ul className="grid grid-cols-1 gap-2">{navLinks}</ul>
 					</motion.div>
