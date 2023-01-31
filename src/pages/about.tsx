@@ -5,7 +5,7 @@ const about = () => {
     <div className="min-h-[50vh]">
       <p className="text-4xl sm:text-5xl font-black text-neutral-300 mb-8">About Me</p>
       <p className="text-lg font-extralight text-neutral-400 leading-8">
-        Hi! I'm Piset. I'm a Web developer from Cambodia 🇰🇭. 
+        Hi! I&apos;m Piset. I&apos;m a Web developer from Cambodia 🇰🇭. 
         Over the years, I have built up a diverse range of skills, 
         qualities and attributes that guarantee I will perform highly in this role. 
         I have extensive experience working both alone and as part of a team on often time-sensitive, 
@@ -15,9 +15,9 @@ const about = () => {
 
       <p className="text-4xl sm:text-5xl font-black text-neutral-300 mb-8">Social</p>
       <div className="flex space-x-4">
-        <a href="https://github.com/iamcombo" target="_blank">{SiGithub({className: 'h-8 w-8'})}</a>
-        <a href="https://twitter.com/iamcomboo" target="_blank">{SiTwitter({className: 'h-8 w-8'})}</a>
-        <a href="https://www.linkedin.com/in/piset-heang" target="_blank">{SiLinkedin({className: 'h-8 w-8'})}</a>
+        <a href="https://github.com/iamcombo" target="_blank" rel="noreferrer">{SiGithub({className: 'h-8 w-8'})}</a>
+        <a href="https://twitter.com/iamcomboo" target="_blank" rel="noreferrer">{SiTwitter({className: 'h-8 w-8'})}</a>
+        <a href="https://www.linkedin.com/in/piset-heang" target="_blank" rel="noreferrer">{SiLinkedin({className: 'h-8 w-8'})}</a>
       </div>
     </div>
   );

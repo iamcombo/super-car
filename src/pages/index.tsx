@@ -71,7 +71,7 @@ export default function Home() {
       <div className='p-8' />
 
       <p className='text-2xl sm:text-3xl font-extrabold mb-1'>Technologies</p>
-      <p className='text-neutral-400 text-lg font-extralight mb-8'>I’ve worked with a range technologies in the web development world.<br />From Frontend to Backend.</p>
+      <p className='text-neutral-400 text-lg font-extralight mb-8'>I&apos;ve worked with a range technologies in the web development world.<br />From Frontend to Backend.</p>
       <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         <ListItem icon={SiGit} text="Git" />
         <ListItem icon={SiNodeDotJs} text="Node.js" />
