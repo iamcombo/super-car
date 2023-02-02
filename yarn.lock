@@ -3081,6 +3081,7 @@ __metadata:
     swr: ^2.0.3
     tailwindcss: ^3.2.4
     typescript: 4.9.4
+    use-lanyard: ^1.4.2
   languageName: unknown
   linkType: soft
 
@@ -3939,6 +3940,13 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 7167432de6817fe8e9e0c9684f1d2de2bb688c94388f7569f7dbdb1587c9f4ca2a77962f134ec90be0cc4d004c939ff0d05acc9f34a0db39a3c797dada262633
+  languageName: node
+  linkType: hard
+
+"use-lanyard@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "use-lanyard@npm:1.4.2"
+  checksum: 1c3299dd865581acd90f018ae382f86b9d66c474f4f080c2a87bb021b1521a855d2326adbf916db345f18267d41be3a1b8ada763cd59b3e1e70b953835fc6e4c
   languageName: node
   linkType: hard
 

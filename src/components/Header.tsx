@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ReactNode, useState } from "react";
 import { Squash as Hamburger } from 'hamburger-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import CurrentPlayingMusic from "./CurrentPlayingMusic";
 
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
@@ -27,19 +28,23 @@ const Header = () => {
         <nav className="flex-1">
           <ul className="flex space-x-4">{navLinks}</ul>
         </nav>
+				<CurrentPlayingMusic />
       </div>
 			<div className="sticky top-0 z-20 overflow-hidden sm:hidden">
-				<button
-					type="button"
-					className="relative z-50 block px-2 text-neutral-400 transition-all focus:ring"
-					onClick={() => setToggle(!toggle)}
-				>
-					<Hamburger 
-						size={20}
-						color="currentColor"
-						toggled={toggle}
-					/>
-				</button>
+				<div className="flex justify-between">
+					<button
+						type="button"
+						className="relative z-50 block px-2 text-neutral-400 transition-all focus:ring"
+						onClick={() => setToggle(!toggle)}
+					>
+						<Hamburger 
+							size={20}
+							color="currentColor"
+							toggled={toggle}
+						/>
+					</button>
+					<CurrentPlayingMusic />
+				</div>
 			</div>
 			<AnimatePresence>
 				{toggle && (
