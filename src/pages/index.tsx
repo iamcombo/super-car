@@ -34,7 +34,11 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Home() {
   const { data, error } = 
-    useSWR<PinnedRepo[], Error>('https://gh-pinned.nxl.sh/api/user/iamcombo', fetcher, { refreshInterval: 5000 });
+    useSWR<PinnedRepo[], Error>(
+      'https://gh-pinned.nxl.sh/api/user/iamcombo', 
+      fetcher, 
+      { refreshInterval: 5000 }
+    );
   const [text, count] = useTypewriter({
     words: [
       "Hey, I'm Piset 👋",
@@ -56,7 +60,7 @@ export default function Home() {
         <Cursor cursorColor='#F7AB0A' />
       </p>
       <div className='p-2'/>
-      <p className='font-extralight text-lg text-neutral-400'>I am a Full-stack developer with a focus on web development and blockchain. Passionate about creating innovative solutions and leveraging the latest technologies.</p>
+      <p className='font-light text-lg text-neutral-400'>I am a Full-stack developer with a focus on web development and blockchain. Passionate about creating innovative solutions and leveraging the latest technologies.</p>
       <div className='p-8' />
 
       <p className='text-2xl sm:text-3xl font-extrabold mb-8'>What do I do?</p>
@@ -64,14 +68,14 @@ export default function Home() {
         {data?.map((element: PinnedRepo, index: number) => 
           <div key={index} className='bg-neutral-900 rounded-lg px-8 py-4'>
             <p className='text-lg font-bold mb-2'>{element.repo}</p>
-            <p className='font-thin text-neutral-400'>{element.description}</p>
+            <p className='font-light text-neutral-400'>{element.description}</p>
           </div>
         )}
       </div>
       <div className='p-8' />
 
       <p className='text-2xl sm:text-3xl font-extrabold mb-1'>Technologies</p>
-      <p className='text-neutral-400 text-lg font-extralight mb-8'>I&apos;ve worked with a range technologies in the web development world.<br />From Frontend to Backend.</p>
+      <p className='text-neutral-400 text-lg font-light mb-8'>I&apos;ve worked with a range technologies in the web development world.<br />From Frontend to Backend.</p>
       <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         <ListItem icon={SiGit} text="Git" />
         <ListItem icon={SiNodeDotJs} text="Node.js" />
