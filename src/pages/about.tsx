@@ -4,7 +4,7 @@ const about = () => {
   return (
     <div className="min-h-[50vh]">
       <p className="text-4xl sm:text-5xl font-black text-neutral-300 mb-8">About Me</p>
-      <p className="text-lg font-extralight text-neutral-400 leading-8">
+      <p className="text-lg font-light text-neutral-400 leading-8">
         Hi! I&apos;m Piset. I&apos;m a Web developer from Cambodia 🇰🇭. 
         Over the years, I have built up a diverse range of skills, 
         qualities and attributes that guarantee I will perform highly in this role. 
