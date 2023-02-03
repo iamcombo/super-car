@@ -63,7 +63,7 @@ export default function Home() {
       <p className='font-light text-lg text-neutral-400'>I am a Full-stack developer with a focus on web development and blockchain. Passionate about creating innovative solutions and leveraging the latest technologies.</p>
       <div className='p-8' />
 
-      <p className='text-2xl sm:text-3xl font-extrabold mb-8'>What do I do?</p>
+      <p className='text-2xl sm:text-3xl font-extrabold mb-8'>Things I&apos;ve Built</p>
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
         {data?.map((element: PinnedRepo, index: number) => 
           <div key={index} className='bg-neutral-900 rounded-lg px-8 py-4'>
