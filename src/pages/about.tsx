@@ -13,7 +13,7 @@ const about = () => {
       </p>
       <div className="p-8" />
 
-      <p className="text-4xl sm:text-5xl font-black text-neutral-300 mb-8">Social</p>
+      <p className="text-3xl sm:text-3xl font-black text-neutral-300 mb-8">Social</p>
       <div className="flex space-x-4">
         <a href="https://github.com/iamcombo" target="_blank" rel="noreferrer">{SiGithub({className: 'h-8 w-8'})}</a>
         <a href="https://twitter.com/iamcomboo" target="_blank" rel="noreferrer">{SiTwitter({className: 'h-8 w-8'})}</a>
