@@ -11,7 +11,7 @@ const about = () => {
         I have extensive experience working both alone and as part of a team on often time-sensitive, 
         challenging web development projects that require outstanding creative and technical capabilities and the ability to ensure all work is optimized across a wide range of platforms.
       </p>
-      <div className="p-8" />
+      <div className="p-6" />
 
       <p className="text-3xl sm:text-3xl font-black text-neutral-300 mb-8">Social</p>
       <div className="flex space-x-4">
