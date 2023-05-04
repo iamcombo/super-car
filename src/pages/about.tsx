@@ -5,7 +5,7 @@ const about = () => {
     <div className="min-h-[50vh]">
       <p className="text-4xl sm:text-5xl font-black text-neutral-300 mb-8">About Me</p>
       <p className="text-lg font-light text-neutral-400 leading-8">
-        Hi! I&apos;m Piset. I&apos;m a Web developer from Cambodia 🇰🇭. 
+        Hi! I&apos;m Piset. I&apos;m a Full-Stack developer from Cambodia 🇰🇭. 
         As a Full-Stack Developer with over three years of experience in web development, I have a deep understanding of both front-end and back-end technologies, including blockchain, React/Next.js, and various backend languages.
       </p>
       <p className="text-lg font-light text-neutral-400 leading-8">
