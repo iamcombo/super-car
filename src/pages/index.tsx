@@ -2,7 +2,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import { ListItem } from '@/components/ListItem';
 import {
-	SiSolidity,
+	SiNestjs,
 	SiGit,
 	SiMongodb,
 	SiNextdotjs as SiNextDotJs,
