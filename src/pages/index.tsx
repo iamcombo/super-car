@@ -82,7 +82,7 @@ export default function Home() {
         <ListItem icon={SiTypescript} text="TypeScript" />
         <ListItem icon={SiReact} text="React.js" />
         <ListItem icon={SiNextDotJs} text="Next.js" />
-        <ListItem icon={SiSolidity} text="Solidity" />
+        <ListItem icon={SiNestjs} text="Nest.js" />
         <ListItem icon={SiPowershell} text="Shell" />
         <ListItem icon={SiYarn} text="Yarn" />
         <ListItem icon={SiTailwindcss} text="TailwindCSS" />
