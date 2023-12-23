@@ -19,26 +19,36 @@ import useSWR from 'swr';
 import { SlLocationPin } from 'react-icons/sl';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 type PinnedRepo = {
-  owner: string;
+  name: string;
   repo: string;
   description: string;
-  language: string;
-  languageColor: string;
+  language: {
+    name: string;
+    color: string;
+  }
   stars: string;
   forks: string;
 };
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+type Response = {
+  isError: boolean;
+  statusMessage: string;
+  statusCode: number;
+  response: PinnedRepo[];
+}
 
 export default function Home() {
   const { data, error } = 
-    useSWR<PinnedRepo[], Error>(
-      'https://gh-pinned.nxl.sh/api/user/iamcombo', 
+    useSWR<Response, Error>(
+      'https://gh-pinned-repos-api.ysnirix.xyz/api/get?username=iamcombo', 
       fetcher, 
       { refreshInterval: 5000 }
     );
+
   const [text, count] = useTypewriter({
     words: [
       "Hey, I'm Piset 👋",
@@ -65,9 +75,9 @@ export default function Home() {
 
       <p className='text-2xl sm:text-3xl font-extrabold mb-8'>Things I&apos;ve Built</p>
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-        {data?.map((element: PinnedRepo, index: number) => 
+        {data?.response.map((element: PinnedRepo, index: number) => 
           <div key={index} className='bg-neutral-900 rounded-lg px-8 py-4'>
-            <p className='text-lg font-bold mb-2'>{element.repo}</p>
+            <p className='text-lg font-bold mb-2'>{element.name}</p>
             <p className='font-light text-neutral-400'>{element.description}</p>
           </div>
         )}
