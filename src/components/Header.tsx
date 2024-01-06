@@ -28,7 +28,7 @@ const Header = () => {
           <button
             type="button"
             className="relative z-50 block px-2 text-neutral-400 transition-all focus:ring"
-            onClick={() => toggle.toggle}
+            onClick={() => toggle.toggle()}
           >
             <Hamburger size={20} color="currentColor" toggled={toggle.isOn} />
           </button>
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
       </div>
       <AnimatePresence>
-        {toggle && (
+        {toggle.isOn && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
