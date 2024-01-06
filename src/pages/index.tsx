@@ -21,9 +21,10 @@ import styles from "@/styles/Home.module.css";
 
 import type { PinnedRepo, Response } from "@/types";
 import { ListItem } from "@/components/ListItem";
+import { Spinning } from "@/components";
 
 export default function Home() {
-  const { data, error } = useSWR<Response, Error>(
+  const { data, error, isLoading } = useSWR<Response, Error>(
     "https://gh-pinned-repos-api.ysnirix.xyz/api/get?username=iamcombo",
     fetcher,
     { refreshInterval: 5000 }
@@ -58,14 +59,22 @@ export default function Home() {
       <p className="text-2xl sm:text-3xl font-extrabold mb-8">
         Things I&apos;ve Built
       </p>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {data?.response.map((element: PinnedRepo, index: number) => (
-          <div key={index} className="bg-neutral-900 rounded-lg px-8 py-4">
-            <p className="text-lg font-bold mb-2">{element.name}</p>
-            <p className="font-light text-neutral-400">{element.description}</p>
-          </div>
-        ))}
-      </div>
+
+      {!isLoading ? (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {data?.response.map((element: PinnedRepo, index: number) => (
+            <div key={index} className="bg-neutral-900 rounded-lg px-8 py-4">
+              <p className="text-lg font-bold mb-2">{element.name}</p>
+              <p className="font-light text-neutral-400">
+                {element.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <Spinning />
+      )}
+
       <div className="p-8" />
 
       <p className="text-2xl sm:text-3xl font-extrabold mb-1">Technologies</p>
