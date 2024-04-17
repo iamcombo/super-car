@@ -16,7 +16,7 @@ const Header = () => {
   ));
 
   return (
-    <div className="mx-auto max-w-4xl py-10 px-5">
+    <div className="mx-auto max-w-3xl py-10 px-8 md:px-0">
       <div className="hidden items-center space-x-2 sm:flex">
         <nav className="flex-1">
           <ul className="flex space-x-4">{_navLinks}</ul>
