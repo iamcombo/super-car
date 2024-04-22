@@ -1,17 +1,20 @@
 import "@/styles/globals.css";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { Noto_Sans } from 'next/font/google';
 import { Footer, Header, Cursor, PageRouteAnimation } from "@/components";
 import PageRouteProgress from "@/utils/n-progress";
 
 import type { AppProps } from "next/app";
+
+const notoSans = Noto_Sans({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
   PageRouteProgress();
   const router = useRouter();
 
   return (
-    <>
+    <div className={notoSans.className}>
       <Head>
         <title>Piset Heang</title>
         <meta name="description" content="Welcome to my portfolio" />
@@ -27,6 +30,6 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
       </PageRouteAnimation>
       <Footer />
-    </>
+    </div>
   );
 }
