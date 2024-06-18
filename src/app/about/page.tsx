@@ -1,8 +1,10 @@
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 
+import { Container } from '@/components';
+
 const About = () => {
   return (
-    <div className="mx-auto my-6 min-h-[50vh] max-w-2xl">
+    <Container>
       <p className="mb-8 text-4xl font-black text-neutral-300 sm:text-5xl">
         About Me
       </p>
@@ -37,7 +39,7 @@ const About = () => {
       <p className="mb-8 text-3xl font-black text-neutral-300 sm:text-3xl">
         Social
       </p>
-      <div className="flex space-x-4">
+      <div className="mb-6 flex space-x-4">
         <a href="https://github.com/iamcombo" target="_blank" rel="noreferrer">
           {SiGithub({ className: 'h-8 w-8' })}
         </a>
@@ -56,7 +58,7 @@ const About = () => {
           {SiLinkedin({ className: 'h-8 w-8' })}
         </a>
       </div>
-    </div>
+    </Container>
   );
 };
 
