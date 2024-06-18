@@ -2,7 +2,12 @@ import backdrop from '/public/magicpattern-mesh-gradient.png';
 import Image from 'next/image';
 import { SlLocationPin } from 'react-icons/sl';
 
-import { Container, HelloTypeWriter, TechItem } from '@/components';
+import {
+  Container,
+  HelloTypeWriter,
+  PinnedRepoItem,
+  TechItem,
+} from '@/components';
 import { techStacks } from '@/constrants/tech-stack';
 
 import type { Response } from '@/types';
@@ -34,12 +39,11 @@ export default async function Home() {
         {data.response && (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {data?.response.map((item, index) => (
-              <div key={index} className="rounded-xl bg-neutral-900 px-8 py-4">
-                <p className="mb-2 text-lg font-bold">{item.name}</p>
-                <p className="font-light text-neutral-400">
-                  {item.description}
-                </p>
-              </div>
+              <PinnedRepoItem
+                key={index}
+                name={item.name}
+                description={item.description}
+              />
             ))}
           </div>
         )}
