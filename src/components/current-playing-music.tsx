@@ -1,9 +1,10 @@
-import React from "react";
-import { useLanyardWS } from "use-lanyard";
-import { SiSpotify } from "react-icons/si";
+'use client';
 
-const DISCORD_ID = "822066211075784714";
-const styles = "flex space-x-2 items-center text-neutral-200";
+import { useLanyardWS } from 'use-lanyard';
+import { SiSpotify } from 'react-icons/si';
+
+const DISCORD_ID = '822066211075784714';
+const styles = 'flex space-x-2 items-center text-neutral-200';
 
 const CurrentPlayingMusic = () => {
   const data = useLanyardWS(DISCORD_ID);
