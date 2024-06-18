@@ -1,25 +1,27 @@
-import { Squash as Hamburger } from "hamburger-react";
-import { AnimatePresence, motion } from "framer-motion";
-import { useToggle } from "@/hooks";
-import { navLinks } from "@/constants";
+'use client';
 
-import NavLink from "./NavLink";
-import CurrentPlayingMusic from "./CurrentPlayingMusic";
+import { navbarItems } from '@/constrants';
+import { useToggle } from '@/hooks';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const Header = () => {
+import NavLink from './nav-link';
+import CurrentPlayingMusic from './current-playing-music';
+import Hamburger from 'hamburger-react';
+
+export const HeaderComponent = () => {
   const toggle = useToggle();
 
-  const _navLinks = navLinks.map((i, k) => (
+  const navLinks = navbarItems.map((i, k) => (
     <NavLink key={k} href={i.route} closeMenu={toggle.toggleOff}>
       {i.name}
     </NavLink>
   ));
 
   return (
-    <div className="mx-auto max-w-3xl py-10 px-8 md:px-0">
+    <div className="mx-auto max-w-2xl px-8 py-10 md:px-0">
       <div className="hidden items-center space-x-2 sm:flex">
         <nav className="flex-1">
-          <ul className="flex space-x-4">{_navLinks}</ul>
+          <ul className="flex space-x-4">{navLinks}</ul>
         </nav>
         <CurrentPlayingMusic />
       </div>
@@ -27,7 +29,7 @@ const Header = () => {
         <div className="flex justify-between">
           <button
             type="button"
-            className="relative z-50 block px-2 text-neutral-400 transition-all focus:ring"
+            className="relative z-50 ml-[-12px] block text-neutral-400 transition-all focus:ring"
             onClick={() => toggle.toggle()}
           >
             <Hamburger size={20} color="currentColor" toggled={toggle.isOn} />
@@ -41,16 +43,13 @@ const Header = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-10 space-y-2 bg-white py-24 px-8 dark:bg-neutral-900 sm:hidden"
+            className="fixed inset-0 z-10 space-y-2 bg-neutral-900 px-8 py-24 sm:hidden"
           >
-            <h1 className="text-4xl font-bold mt-4">Menu.</h1>
-
-            <ul className="grid grid-cols-1 gap-2">{_navLinks}</ul>
+            <h1 className="mt-4 text-4xl font-bold">Menu.</h1>
+            <ul className="grid grid-cols-1 gap-2">{navLinks}</ul>
           </motion.div>
         )}
       </AnimatePresence>
     </div>
   );
 };
-
-export default Header;

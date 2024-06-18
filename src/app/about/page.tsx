@@ -1,12 +1,12 @@
-import { SiGithub, SiLinkedin, SiTwitter } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 
-const about = () => {
+const About = () => {
   return (
-    <div className="min-h-[50vh]">
-      <p className="text-4xl sm:text-5xl font-black text-neutral-300 mb-8">
+    <div className="mx-auto my-6 min-h-[50vh] max-w-2xl">
+      <p className="mb-8 text-4xl font-black text-neutral-300 sm:text-5xl">
         About Me
       </p>
-      <p className="text-lg font-light text-neutral-400 leading-8">
+      <p className="text-lg font-light leading-8 text-neutral-400">
         Hi! I&apos;m Piset. I&apos;m a Full-Stack developer from Cambodia 🇰🇭. As
         a Full-Stack Developer with over three years of experience in web
         development, I have a deep understanding of both front-end and back-end
@@ -14,7 +14,7 @@ const about = () => {
         languages.
       </p>
       <br />
-      <p className="text-lg font-light text-neutral-400 leading-8">
+      <p className="text-lg font-light leading-8 text-neutral-400">
         In my previous roles, I have had the opportunity to design and develop a
         variety of web applications using cutting-edge technologies. My
         experience in web development has allowed me to build a responsive and
@@ -24,7 +24,7 @@ const about = () => {
         deliver high-quality web applications.
       </p>
       <br />
-      <p className="text-lg font-light text-neutral-400 leading-8">
+      <p className="text-lg font-light leading-8 text-neutral-400">
         I am also passionate about staying up-to-date with the latest web
         development trends and technologies. I am always looking for new
         challenges that can help me grow as a developer and expand my knowledge
@@ -34,30 +34,30 @@ const about = () => {
       </p>
       <div className="p-6" />
 
-      <p className="text-3xl sm:text-3xl font-black text-neutral-300 mb-8">
+      <p className="mb-8 text-3xl font-black text-neutral-300 sm:text-3xl">
         Social
       </p>
       <div className="flex space-x-4">
         <a href="https://github.com/iamcombo" target="_blank" rel="noreferrer">
-          {SiGithub({ className: "h-8 w-8" })}
+          {SiGithub({ className: 'h-8 w-8' })}
         </a>
         <a
           href="https://twitter.com/iamcomboo"
           target="_blank"
           rel="noreferrer"
         >
-          {SiTwitter({ className: "h-8 w-8" })}
+          {SiTwitter({ className: 'h-8 w-8' })}
         </a>
         <a
           href="https://www.linkedin.com/in/piset-heang"
           target="_blank"
           rel="noreferrer"
         >
-          {SiLinkedin({ className: "h-8 w-8" })}
+          {SiLinkedin({ className: 'h-8 w-8' })}
         </a>
       </div>
     </div>
   );
 };
 
-export default about;
+export default About;

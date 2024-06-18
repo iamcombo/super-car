@@ -1,1 +1,1 @@
-export * from "./useToggle";
+export * from './use-toggle';
