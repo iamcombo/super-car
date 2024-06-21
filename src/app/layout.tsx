@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import {
+  Cursor,
   FooterComponent,
   HeaderComponent,
   PageRouteAnimation,
 } from '@/components';
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,6 +27,9 @@ export default function RootLayout({
         <HeaderComponent />
         <PageRouteAnimation>{children}</PageRouteAnimation>
         <FooterComponent />
+
+        <Cursor />
+        <NextTopLoader />
       </body>
     </html>
   );
