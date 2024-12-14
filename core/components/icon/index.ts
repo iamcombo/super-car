@@ -1,0 +1,14 @@
+export { BashIcon } from "./bash";
+export { GitHubIcon } from "./github";
+export { GitIcon } from "./git";
+export { LinkedInIcon } from "./linkedin";
+export { MongoIcon } from "./mongo";
+export { NestjsIcon } from "./nestjs";
+export { NextIcon } from "./next";
+export { PostgresIcon } from "./postgres";
+export { ReactIcons } from "./react";
+export { ShadcnIcon } from "./shadcn";
+export { SpotifyIcon } from "./spotify";
+export { TailwindIcon } from "./tailwind";
+export { TwitterIcon } from "./twitter";
+export { TypescriptIcon } from "./typescript";
