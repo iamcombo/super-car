@@ -1,8 +1,8 @@
 "use client";
 
 import { useToggle } from "@/core/hooks";
-import Hamburger from "hamburger-react";
-import { CurrentPlayingMusic } from "../music-playing/current-playing-music";
+import { Divide as Hamburger } from "hamburger-react";
+import { CurrentPlayingMusic } from "../../../feature/spotify/current-playing-music";
 import { AnimatePresence, motion } from "motion/react";
 import { navbarItems } from "@/core/constants";
 import { NavLink } from "./nav-link";
@@ -26,7 +26,12 @@ export const MobileNavbar = () => {
             className="relative z-50 ml-[-12px] block text-neutral-400 transition-all focus:ring"
             onClick={() => toggle.toggle()}
           >
-            <Hamburger size={20} color="currentColor" toggled={toggle.isOn} />
+            <Hamburger
+              label="hamburger button"
+              size={20}
+              color="currentColor"
+              toggled={toggle.isOn}
+            />
           </button>
           <CurrentPlayingMusic />
         </div>

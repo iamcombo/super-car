@@ -10,7 +10,7 @@ export const PinnedRepoItem = ({
 }) => {
   return (
     <Card className="rounded-xl border-none bg-neutral-900 px-6 py-4 transition-all">
-      <p className="mb-2 text-lg font-bold">{name}</p>
+      <p className="mb-2 text-md sm:text-lg font-bold">{name}</p>
       <p className="truncate font-light text-neutral-400">{description}</p>
     </Card>
   );
