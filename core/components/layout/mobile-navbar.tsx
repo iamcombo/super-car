@@ -22,6 +22,7 @@ export const MobileNavbar = () => {
         <div className="flex justify-between">
           <button
             type="button"
+            aria-label="hamburger button"
             className="relative z-50 ml-[-12px] block text-neutral-400 transition-all focus:ring"
             onClick={() => toggle.toggle()}
           >
