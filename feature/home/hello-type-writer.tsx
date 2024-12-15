@@ -10,7 +10,7 @@ export const HelloTypeWriter = () => {
   });
 
   return (
-    <p className="text-4xl font-black sm:text-5xl">
+    <p className="text-3xl font-black sm:text-5xl">
       {text}
       <Cursor cursorColor="#F7AB0A" />
     </p>

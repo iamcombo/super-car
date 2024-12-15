@@ -1,8 +1,8 @@
 import { navbarItems } from "@/core/constants";
 
 import { NavLink } from "./nav-link";
-import { CurrentPlayingMusic } from "../music-playing/current-playing-music";
 import { MobileNavbar } from "./mobile-navbar";
+import { CurrentPlayingMusic } from "@/feature/spotify";
 
 export const HeaderComponent = () => {
   const navLinks = navbarItems.map((i, k) => (
