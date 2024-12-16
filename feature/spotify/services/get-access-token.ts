@@ -1,5 +1,4 @@
 import { TOKEN_ENDPOINT } from "@/core/constants";
-import { storeAccessToken } from "@/core/utils/spotify";
 
 export const getAccessToken = async () => {
   const CLIENT_ID = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID as string;
@@ -22,6 +21,5 @@ export const getAccessToken = async () => {
   });
 
   const data = await response.json();
-  storeAccessToken(data.access_token);
   return data.access_token as string;
 };
