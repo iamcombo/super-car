@@ -8,7 +8,10 @@ import { SpotifyIcon } from "@/core/components/icon";
 const styles = "flex space-x-2 items-center text-neutral-200";
 
 export const CurrentPlayingMusic = () => {
-  const { data } = useSWR(NOW_PLAYING_ENDPOINT, spotifyNowPlayingFetcher);
+  const { data } = useSWR(NOW_PLAYING_ENDPOINT, spotifyNowPlayingFetcher, {
+    refreshInterval: 5000,
+    revalidateOnMount: true,
+  });
 
   if (!data || !data.isPlaying) {
     return (
@@ -22,12 +25,7 @@ export const CurrentPlayingMusic = () => {
   }
 
   return (
-    <SWRConfig
-      value={{
-        refreshInterval: 3000,
-        revalidateOnMount: true,
-      }}
-    >
+    <SWRConfig>
       <div className={styles}>
         <span className="truncate">
           Listening to {data.name} by {data.artist}
