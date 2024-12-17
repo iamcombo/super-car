@@ -9,7 +9,7 @@ const styles = "flex space-x-2 items-center text-neutral-200";
 
 export const CurrentPlayingMusic = () => {
   const { data } = useSWR(NOW_PLAYING_ENDPOINT, spotifyNowPlayingFetcher, {
-    refreshInterval: 5000,
+    refreshInterval: 3000,
     revalidateOnMount: true,
   });
 
