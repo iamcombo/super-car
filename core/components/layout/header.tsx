@@ -2,9 +2,11 @@ import { navbarItems } from "@/core/constants";
 
 import { NavLink } from "./nav-link";
 import { MobileNavbar } from "./mobile-navbar";
-import { CurrentPlayingMusic } from "@/feature/spotify";
+import { CurrentPlayingMusic, getNowPlaying } from "@/feature/spotify";
 
-export const HeaderComponent = () => {
+export const HeaderComponent = async () => {
+  const data = await getNowPlaying();
+
   const navLinks = navbarItems.map((i, k) => (
     <NavLink key={k} href={i.route}>
       {i.name}
@@ -17,7 +19,7 @@ export const HeaderComponent = () => {
         <nav className="flex-1">
           <ul className="flex space-x-4">{navLinks}</ul>
         </nav>
-        <CurrentPlayingMusic />
+        <CurrentPlayingMusic nowPlaying={data} />
       </div>
 
       <MobileNavbar />
