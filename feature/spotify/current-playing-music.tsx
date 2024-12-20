@@ -14,7 +14,7 @@ export const CurrentPlayingMusic = ({ nowPlaying }: ICurrentPlayingProp) => {
     useState<INowPlayingResponse>(nowPlaying);
 
   const { data } = useSWR(NOW_PLAYING_ENDPOINT, spotifyNowPlayingFetcher, {
-    refreshInterval: 5000,
+    refreshInterval: 3000,
     revalidateOnMount: true,
   });
 
