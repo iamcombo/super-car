@@ -1,6 +1,6 @@
 "use client";
 
-import { ICurrentPlayingProp, INowPlayingResponse } from "./type";
+import { ICurrentPlayingProp } from "./type";
 import { NOW_PLAYING_ENDPOINT } from "@/core/constants";
 import { SpotifyIcon } from "@/core/components/icon";
 import { spotifyNowPlayingFetcher } from "@/core/utils";
@@ -10,8 +10,7 @@ import { useMemo, useState } from "react";
 const styles = "flex space-x-2 items-center text-neutral-200";
 
 export const CurrentPlayingMusic = ({ nowPlaying }: ICurrentPlayingProp) => {
-  const [nowPlayingData, setNowPlayingData] =
-    useState<INowPlayingResponse>(nowPlaying);
+  const [nowPlayingData, setNowPlayingData] = useState(nowPlaying);
 
   const { data } = useSWR(NOW_PLAYING_ENDPOINT, spotifyNowPlayingFetcher, {
     refreshInterval: 3000,

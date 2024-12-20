@@ -6,8 +6,9 @@ import { CurrentPlayingMusic } from "../../../feature/spotify/current-playing-mu
 import { AnimatePresence, motion } from "motion/react";
 import { navbarItems } from "@/core/constants";
 import { NavLink } from "./nav-link";
+import { ICurrentPlayingProp } from "@/feature/spotify";
 
-export const MobileNavbar = () => {
+export const MobileNavbar = ({ nowPlaying }: ICurrentPlayingProp) => {
   const toggle = useToggle();
 
   const navLinks = navbarItems.map((i, k) => (
@@ -33,7 +34,7 @@ export const MobileNavbar = () => {
               toggled={toggle.isOn}
             />
           </button>
-          <CurrentPlayingMusic />
+          <CurrentPlayingMusic {...{ nowPlaying }} />
         </div>
       </div>
       <AnimatePresence>
