@@ -22,7 +22,7 @@ export const HeaderComponent = async () => {
         <CurrentPlayingMusic nowPlaying={data} />
       </div>
 
-      <MobileNavbar />
+      <MobileNavbar nowPlaying={data} />
     </div>
   );
 };
