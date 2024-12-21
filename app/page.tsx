@@ -8,7 +8,7 @@ import {
   fetchGitRepo,
 } from "@/feature/home";
 
-import backdrop from "/public/magicpattern-mesh-gradient.png";
+import backdrop from "/public/magicpattern-mesh-gradient.webp";
 import { techStacks } from "@/core/constants";
 
 export default async function Home() {
@@ -61,8 +61,8 @@ export default async function Home() {
             fill
             alt=""
             src={backdrop}
-            objectFit="cover"
-            className="rounded-xl"
+            className="rounded-xl object-cover"
+            priority
           />
           <div className="relative p-2">
             <div className="h-full w-full rounded-xl border border-gray-50 bg-gray-400 bg-opacity-20 bg-clip-padding p-4 backdrop-blur-md backdrop-filter">
